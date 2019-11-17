@@ -11,7 +11,7 @@ public class LoginController {
 
 
 	//ログイン画面のGET用コントローラー
-	@GetMapping
+	@GetMapping("/login")
 	public String getLogin(Model model) {
 		//login.htmlに画面遷移
 		return "login/login";
@@ -23,6 +23,4 @@ public class LoginController {
 		//login.htmlに画面遷移
 		return "login/login";
 	}
-
-
 }
