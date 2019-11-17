@@ -23,6 +23,8 @@ public class HelloService {
 		int age = (Integer)map.get("age");
 		int number = (Integer)map.get("number");
 
+
+
 		//Employeeクラスに値をセット
 		Employee employee = new Employee();
 		employee.setEmployeeId(employeeId);
