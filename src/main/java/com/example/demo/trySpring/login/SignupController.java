@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.trySpring.domain.model.GroupOrder;
 import com.example.demo.trySpring.domain.model.SignupForm;
 
 
@@ -56,7 +57,7 @@ public class SignupController {
 
 	//ユーザー登録画面のPost用コントローラー
 	@PostMapping("/signup")
-	public String postSignUp(@ModelAttribute @Validated SignupForm form ,BindingResult bindingResult ,Model model) {
+	public String postSignUp(@ModelAttribute @Validated(GroupOrder.class) SignupForm form ,BindingResult bindingResult ,Model model) {
 
 		//データバインド失敗の場合
 		//入力チェックに引っかかった場合、ユーザー登録画面に戻る
