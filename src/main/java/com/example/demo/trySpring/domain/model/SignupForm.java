@@ -34,7 +34,7 @@ public class SignupForm {
 
 
 	//必須入力
-	@NotNull(message="{require_check}")
+	@NotBlank(message="{require_check}")
 	private String userName;    //ユーザー名
 
 
