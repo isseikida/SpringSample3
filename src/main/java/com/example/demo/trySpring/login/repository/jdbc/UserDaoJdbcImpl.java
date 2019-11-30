@@ -28,17 +28,42 @@ public class UserDaoJdbcImpl implements UserDao{
 
 
 
-	//Userテーブルの件数を取得
+	//Userテーブルのデータを1件登録
 	@Override
 	public int insertOne(User user)throws DataAccessException{
 
-		return 0;
+		//NO.3043 : insert
+		//1件登録
+		int rowNumber=jdbc.update("INSERT INTO m_user(user_id,"
+
+				+" password,"
+				+" user_name,"
+				+" birthday,"
+				+" age,"
+				+" marriage,"
+				+" role)"
+				+" VALUES(?,?,?,?,?,?,?)"
+				, user.getUserId()
+				, user.getPassword()
+				, user.getUserName()
+				, user.getBirthday()
+				, user.getAge()
+				, user.isMarriage()
+				, user.getRole());
+
+
+		return rowNumber;
 	}
 
 
 	//Userテーブルのデータを1件取得
 	@Override
 	public User selectOne(String userId)throws DataAccessException{
+
+
+
+
+
 		return null;
 	}
 
