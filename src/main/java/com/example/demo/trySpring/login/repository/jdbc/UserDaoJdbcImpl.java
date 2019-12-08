@@ -78,9 +78,9 @@ public class UserDaoJdbcImpl implements UserDao{
 		//取得したデータを結果返却用の変数にセットしていく
 		user.setUserId((String)map.get("user_id"));
 		user.setPassword((String)map.get("password"));
-		user.setUserName((String)map.get("userName"));
+		user.setUserName((String)map.get("user_name"));
 		user.setBirthday((Date)map.get("birthday"));
-		user.setAge((Integer)map.get("marriage"));
+		user.setAge((Integer)map.get("age"));
 		user.setMarriage((Boolean)map.get("marriage"));
 		user.setRole((String)map.get("role"));
 
