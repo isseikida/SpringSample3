@@ -51,9 +51,11 @@ public class UserService {
 
 	//1件取得用メソッド
 	public User selectOne(String userId) {
+		System.out.println("SELECT(1件)処理 : 13");
 
 		//selectOne実行
 		return dao.selectOne(userId);
+
 	}
 
 

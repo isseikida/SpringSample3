@@ -27,6 +27,7 @@ public interface UserDao {
 	public User selectOne(String userId)throws DataAccessException;
 
 
+
 	//Userテーブルの全データを取得
 	public List<User>selectMany() throws DataAccessException;
 

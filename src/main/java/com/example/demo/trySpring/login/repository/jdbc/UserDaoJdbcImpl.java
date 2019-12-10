@@ -72,8 +72,12 @@ public class UserDaoJdbcImpl implements UserDao{
 				+" WHERE user_id=?"
 				,userId);
 
+		System.out.println("SELECT(1件)処理 : 1");
+
 		//結果返却用の変数
 		User user = new User();
+
+		System.out.println("SELECT(1件)処理 : 2");
 
 		//取得したデータを結果返却用の変数にセットしていく
 		user.setUserId((String)map.get("user_id"));
@@ -83,6 +87,7 @@ public class UserDaoJdbcImpl implements UserDao{
 		user.setAge((Integer)map.get("age"));
 		user.setMarriage((Boolean)map.get("marriage"));
 		user.setRole((String)map.get("role"));
+		System.out.println("SELECT(1件)処理 : 3");
 
 
 		return user;
@@ -92,19 +97,24 @@ public class UserDaoJdbcImpl implements UserDao{
 	//Userテーブルの全データを取得
 	@Override
 	public List<User>selectMany()throws DataAccessException{
+		System.out.println("SELECT(1件)処理 : 14");
 
 		//NO.3194 : 複数件のselect
 		//m_userテーブルのデータを全件取得
 		List<Map<String,Object>> getList = jdbc.queryForList("SELECT * FROM m_user");
+		System.out.println("SELECT(1件)処理 : 15");
 
 		//結果返却用の変数
 		List<User>userList = new ArrayList<>();
+		System.out.println("SELECT(1件)処理 : 16");
 
 		//取得したデータを結果返却用のListに格納していく
 		for(Map<String,Object>map:getList) {
+			System.out.println("SELECT(1件)処理 : 17");
 
 			//Userインスタンスの生成
 			User user = new User();
+			System.out.println("SELECT(1件)処理 : 18");
 
 			//Userインスタンスに取得したデータをセット
 			user.setUserId((String)map.get("user_id"));
@@ -114,10 +124,13 @@ public class UserDaoJdbcImpl implements UserDao{
 			user.setAge((Integer)map.get("age"));
 			user.setMarriage((Boolean)map.get("marriage"));
 			user.setRole((String)map.get("role"));
+			System.out.println("SELECT(1件)処理 : 19");
 
 			//結果返却用のListに追加
 			userList.add(user);
+			System.out.println("SELECT(1件)処理 : 20");
 		}
+		System.out.println("SELECT(1件)処理 : 21");
 
 		return userList;
 	}

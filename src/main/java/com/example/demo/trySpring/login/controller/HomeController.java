@@ -36,6 +36,8 @@ public class HomeController {
 		radio.put("既婚", "true");
 		radio.put("未婚","false");
 
+		System.out.println("SELECT(1件)処理 : 22");
+
 		return radio;
 	}
 
@@ -77,21 +79,27 @@ public class HomeController {
 
 		//ユーザーID確認(デバック)
 		System.out.println("userId="+ userId);
+		System.out.println("SELECT(1件)処理 : 5");
 
 		//コンテンツ部分にユーザー詳細を表示するための文字列を登録
 		model.addAttribute("contents","login/userDetail::userDetail_contents");
+		System.out.println("SELECT(1件)処理 : 6");
 
 		//結婚ステータス用ラジオボタンの初期化
 		radioMarriage=initRadioMarrige();
+		System.out.println("SELECT(1件)処理 : 7");
 
 		//ラジオボタン用のMapをModelに登録
 		model.addAttribute("radioMarriage",radioMarriage);
+		System.out.println("SELECT(1件)処理 : 8");
 
 		//ユーザーIDのチェック
 		if(userId !=null && userId.length() > 0) {
+			System.out.println("SELECT(1件)処理 : 9");
 
 			//ユーザー情報を取得
 			User user = userService.selectOne(userId);
+			System.out.println("SELECT(1件)処理 : 10");
 
 			//Userクラスをフォームクラスに変換
 			form.setUserId(user.getUserId());
@@ -99,9 +107,11 @@ public class HomeController {
 			form.setBirthday(user.getBirthday());
 			form.setAge(user.getAge());
 			form.setMarriage(user.isMarriage());
+			System.out.println("SELECT(1件)処理 : 11");
 
 			//Modelに登録
 			model.addAttribute("signupForm",form);
+			System.out.println("SELECT(1件)処理 : 12");
 		}
 		return "login/homeLayout";
 	}
