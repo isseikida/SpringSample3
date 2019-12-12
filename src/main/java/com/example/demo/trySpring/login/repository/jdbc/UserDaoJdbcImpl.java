@@ -16,7 +16,7 @@ import com.example.demo.trySpring.login.repository.UserDao;
 
 
 
-@Repository
+@Repository("UserrDaoJdbcImpl")
 public class UserDaoJdbcImpl implements UserDao{
 
 
