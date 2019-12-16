@@ -16,7 +16,7 @@ import com.example.demo.trySpring.login.repository.UserDao;
 
 
 
-@Repository("UserrDaoJdbcImpl")
+@Repository("UserDaoJdbcImpl")
 public class UserDaoJdbcImpl implements UserDao{
 
 
@@ -173,9 +173,18 @@ public class UserDaoJdbcImpl implements UserDao{
 	}
 
 
-	//Usesrテーブルの全データをCSVに出力
+	//Userテーブルの全データをCSVに出力(保存)
 	@Override
 	public void userCsvOut() throws DataAccessException{
+
+		//M_USERテーブルのデータを全件取得するSQL
+		String sql = "SELECT * FROM m_user";
+
+		//ResultSetExtractorの生成
+		UserRowCallbackHandler handler = new UserRowCallbackHandler();
+
+		//SQL実行&CSV出力
+		jdbc.query(sql,handler);
 
 	}
 }
