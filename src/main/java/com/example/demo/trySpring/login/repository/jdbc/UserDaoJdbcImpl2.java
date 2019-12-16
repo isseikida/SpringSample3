@@ -1,7 +1,10 @@
 package com.example.demo.trySpring.login.repository.jdbc;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.trySpring.login.domain.model.User;
@@ -26,6 +29,21 @@ public class UserDaoJdbcImpl2 extends UserDaoJdbcImpl {
 
 		//SQL実行
 		return jdbc.queryForObject(sql, rowMapper, userId);
+	}
+
+
+	//ユーザー全件取得
+	@Override
+	public List<User> selectMany(){
+
+		//M_USERテーブルのデータを全件取得するSQL
+		String sql = "SELECT * FROM m_user";
+
+		//Rowmapperの生成
+		RowMapper<User> rowMapper = new UserRowMapper();
+
+		//SQL実行
+		return jdbc.query(sql,rowMapper);
 	}
 }
 
