@@ -22,7 +22,7 @@ import com.example.demo.trySpring.login.repository.UserDao;
 public class UserService {
 
 	@Autowired
-	@Qualifier("UserDaoJdbcImpl3")
+	@Qualifier("UserDaoJdbcImpl")
 	UserDao dao;
 
 
