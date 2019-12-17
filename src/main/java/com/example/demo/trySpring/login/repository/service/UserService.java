@@ -12,12 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.trySpring.login.domain.model.User;
 import com.example.demo.trySpring.login.repository.UserDao;
 
 
-
+@Transactional   //トランザクションを使用
 @Service
 public class UserService {
 
