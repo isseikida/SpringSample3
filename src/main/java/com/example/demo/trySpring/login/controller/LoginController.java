@@ -1,4 +1,4 @@
-package com.example.demo.trySpring.login;
+package com.example.demo.trySpring.login.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

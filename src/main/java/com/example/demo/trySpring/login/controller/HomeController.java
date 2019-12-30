@@ -195,7 +195,7 @@ public class HomeController {
 
 
 		//ログイン画面にリダイレクト
-		return "redirec:/login";
+		return "redirect:/login";
 	}
 
 
